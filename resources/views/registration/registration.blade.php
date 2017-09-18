@@ -4,7 +4,7 @@
   <nav class="navbar" style="background: #00405D;" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#"><img src="assets/img/logo.png" alt="yurpish"></a>
+        <a class="navbar-brand" href="#"><img src="assets/img/logo.png" alt="yurbiss"></a>
       </div>
     </div>
     <!-- /.container -->
@@ -27,7 +27,7 @@
     <form id="form_register" class="registrasi_form form-horizontal" role="form" action="{{ route('post-registration') }}" method="POST">
     {{csrf_field()}}
         <fieldset>
-        <div class="col-md-3 col-sm-12">    
+        <div class="col-md-3 col-sm-12">
           <p><strong>SUDAH PUNYA AKUN ?</strong></p>
           <p>
             <a href="/login">
@@ -56,7 +56,6 @@
             </div>
           </div>
           <!-- /#membership -->
-          <div class="clearfix"></div>
           <hr>
 
           <span class="text-center">

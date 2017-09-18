@@ -25,13 +25,13 @@
 
 <body>
 
- 
+
    @yield('content')
 
 
-<button onclick="toTop" id="back_to_top" title="Go to Top">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-</button>
+   <button onclick="scrolltotop()" id="back_to_top" class="btn btn-info" title="Go to Top">
+       <span class="glyphicon glyphicon-chevron-up"></span>
+     </button>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="assets/js/jquery-3.2.1.min.js"></script>
@@ -40,23 +40,25 @@
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
 
-  <script>
-    window.onscroll = function () {scrollFunction()};
+    <!-- back_to_top -->
+    <script>
+      $(document).ready(function() {
+        $(window).scroll(function() {
+          if ($(window).scrollTop() >= 10) {
+            $('#back_to_top').fadeIn();
+          } else {
+            $('#back_to_top').fadeOut();
+          }
+        });
+      });
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ) {
-        document.getElementById('back_to_top').style.display = "block";
-      } else {
-        document.getElementById('back_to_top').style.display = "none";
+      function scrolltotop() {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 500);
       }
-    }
+    </script>
 
-    // When the user clicks on the button, scroll to the top of the document
-    function toTop() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-  </script>
    <!-- bootstrap validation -->
   <script>
     $(document).ready(function() {
